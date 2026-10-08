@@ -101,59 +101,45 @@ st.markdown(
     [data-testid="stSidebar"] strong {
         color: white !important;
     }
-    [data-testid="stSidebar"] .stRadio > div { gap: 0.3rem; }
-    [data-testid="stSidebar"] .stRadio label {
-        font-size: 1.05rem;
-        padding: 0.45rem 0.6rem;
-        border-radius: 10px;
-        color: white !important;
-        display: flex;
-        align-items: center;
-        min-height: 2.4rem;
-        background: rgba(255,255,255,0.03);
+    [data-testid="stSidebar"] h1 {
+        font-size: 2rem !important;
+        line-height: 1.15;
+        white-space: nowrap;
     }
-    [data-testid="stSidebar"] .stRadio label:hover {
-        background: rgba(255,255,255,0.09);
-    }
-    [data-testid="stSidebar"] .st-key-navigation {
+    [data-testid="stSidebar"] .st-key-navigation_menu {
         width: 100%;
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stWidgetLabel"] {
-        display: none;
-    }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioGroup"] {
-        align-items: stretch;
-    }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] {
+    [data-testid="stSidebar"] .st-key-navigation_menu div.stButton > button {
         width: 100%;
-        align-self: stretch;
         min-height: 2.7rem;
-        box-sizing: border-box;
+        justify-content: flex-start;
+        text-align: left;
         border: 1px solid transparent;
+        border-radius: 10px;
         transition: background-color 150ms ease, border-color 150ms ease;
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] > div {
-        width: 100%;
+    [data-testid="stSidebar"] .st-key-navigation_menu button[kind="secondary"] {
+        background: rgba(255, 255, 255, 0.03);
+        color: #ffffff !important;
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] > div > div:first-child {
-        display: none;
+    [data-testid="stSidebar"] .st-key-navigation_menu button[kind="secondary"] p {
+        color: #ffffff !important;
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"][data-selected="true"] {
+    [data-testid="stSidebar"] .st-key-navigation_menu button[kind="primary"] {
         background: rgba(223, 242, 206, 0.16);
         border-color: rgba(223, 242, 206, 0.38);
+        color: #ffffff !important;
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"]:hover {
+    [data-testid="stSidebar"] .st-key-navigation_menu button[kind="primary"] p {
+        color: #ffffff !important;
+    }
+    [data-testid="stSidebar"] .st-key-navigation_menu button:hover {
         background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(223, 242, 206, 0.38);
     }
-    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"]:focus-visible {
+    [data-testid="stSidebar"] .st-key-navigation_menu button:focus-visible {
         outline: 2px solid #dff2ce;
         outline-offset: 2px;
-    }
-    [data-testid="stSidebar"] .stRadio input[type="radio"] {
-        accent-color: #ffffff;
-        width: 0.9rem;
-        height: 0.9rem;
-        margin-right: 0.6rem;
     }
     [data-testid="stSidebar"] .stSuccess,
     [data-testid="stSidebar"] .stWarning,
@@ -208,55 +194,48 @@ st.markdown(
     .st-key-about_sections [data-testid="stExpander"] summary [data-testid="stMarkdownContainer"] p {
         color: var(--green) !important;
     }
-    [data-testid="stAppViewContainer"] .stRadio label,
-    [data-testid="stAppViewContainer"] .stRadio label p,
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] label,
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] label p,
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] small {
         color: #183326 !important;
     }
-    .st-key-image_source {
+    .st-key-image_source_options {
         width: 100%;
     }
-    .st-key-image_source [data-testid="stRadioGroup"] {
-        width: 100%;
-        gap: 0.75rem;
-    }
-    .st-key-image_source [data-testid="stRadioOption"] {
-        flex: 1;
-        justify-content: center;
+    .st-key-image_source_options div.stButton > button {
         min-height: 2.8rem;
-        padding: 0.45rem 0.8rem;
-        border: 1px solid #b9d2c1;
         border-radius: 12px;
-        background: #ffffff;
+        font-weight: 600;
         transition: background-color 150ms ease, border-color 150ms ease;
     }
-    .st-key-image_source [data-testid="stRadioOption"] > div > div:first-child {
-        display: none;
+    .st-key-image_source_options button[kind="secondary"] {
+        background: #ffffff;
+        border: 1px solid #b9d2c1;
+        color: #183326 !important;
     }
-    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"] {
+    .st-key-image_source_options button[kind="secondary"] p {
+        color: #183326 !important;
+    }
+    .st-key-image_source_options button[kind="primary"] {
         background: var(--green);
         border-color: var(--green);
-    }
-    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"] p {
         color: #ffffff !important;
     }
-    .st-key-image_source [data-testid="stRadioOption"]:hover {
-        border-color: var(--green);
+    .st-key-image_source_options button[kind="primary"] p {
+        color: #ffffff !important;
+    }
+    .st-key-image_source_options button[kind="secondary"]:hover {
         background: #f0f7f1;
+        border-color: var(--green);
+        color: #164e34 !important;
     }
-    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"]:hover {
+    .st-key-image_source_options button[kind="primary"]:hover {
         background: #164e34;
+        border-color: #164e34;
     }
-    .st-key-image_source [data-testid="stRadioOption"]:focus-visible {
+    .st-key-image_source_options button:focus-visible {
         outline: 2px solid var(--green);
         outline-offset: 2px;
-    }
-    [data-testid="stSidebar"] .stRadio label,
-    [data-testid="stSidebar"] .stRadio label p,
-    [data-testid="stSidebar"] .stRadio label span {
-        color: #ffffff !important;
     }
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] section {
         background: #ffffff !important;
@@ -424,13 +403,29 @@ def render_detection() -> None:
         '<p class="soft-note">Choose a clear, well-lit image with the leaf filling most of the frame.</p>',
         unsafe_allow_html=True,
     )
-    image_source = st.radio(
-        "Choose image source",
-        ["Upload image", "Use camera"],
-        key="image_source",
-        horizontal=True,
-        label_visibility="collapsed",
-    )
+    if "image_source" not in st.session_state:
+        st.session_state["image_source"] = "Upload image"
+    with st.container(key="image_source_options"):
+        upload_column, camera_column = st.columns(2)
+        with upload_column:
+            if st.button(
+                "Upload image",
+                key="source_upload",
+                type="primary" if st.session_state["image_source"] == "Upload image" else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state["image_source"] = "Upload image"
+                st.rerun()
+        with camera_column:
+            if st.button(
+                "Use camera",
+                key="source_camera",
+                type="primary" if st.session_state["image_source"] == "Use camera" else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state["image_source"] = "Use camera"
+                st.rerun()
+    image_source = st.session_state["image_source"]
     selected_image = None
     if image_source == "Upload image":
         selected_image = st.file_uploader(
@@ -645,12 +640,18 @@ with st.sidebar:
     if "next_navigation" in st.session_state:
         st.session_state["navigation"] = st.session_state["next_navigation"]
         del st.session_state["next_navigation"]
-    selected_page = st.radio(
-        "Navigation",
-        pages,
-        key="navigation",
-        label_visibility="collapsed",
-    )
+    selected_page = st.session_state["navigation"]
+    with st.container(key="navigation_menu"):
+        for page in pages:
+            button_key = "nav_" + page.lower().replace(" ", "_")
+            if st.button(
+                page,
+                key=button_key,
+                type="primary" if selected_page == page else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state["navigation"] = page
+                st.rerun()
     st.caption("PlantVillage dataset · MobileNetV2")
 
 if selected_page == "Home":
