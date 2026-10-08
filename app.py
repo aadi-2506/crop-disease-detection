@@ -74,10 +74,9 @@ st.markdown(
     [data-testid="stHeader"] [data-testid="stDeployButton"] {
         color: var(--ink) !important;
     }
-    [data-testid="stSidebarCollapsedControl"] button {
-        color: var(--green) !important;
-    }
-    [data-testid="stSidebarCollapsedControl"] button svg {
+    [data-testid="stExpandSidebarButton"],
+    [data-testid="stExpandSidebarButton"] button,
+    [data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"] {
         color: var(--green) !important;
     }
     [data-testid="stSidebar"] {
@@ -88,10 +87,8 @@ st.markdown(
         padding: 1.2rem 0.9rem 0.8rem 0.9rem;
         color: white !important;
     }
-    [data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] {
-        color: white !important;
-    }
-    [data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] svg {
+    [data-testid="stSidebarCollapseButton"] button,
+    [data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"] {
         color: white !important;
     }
     [data-testid="stSidebar"] h1,
