@@ -74,12 +74,24 @@ st.markdown(
     [data-testid="stHeader"] [data-testid="stDeployButton"] {
         color: var(--ink) !important;
     }
+    [data-testid="stSidebarCollapsedControl"] button {
+        color: var(--green) !important;
+    }
+    [data-testid="stSidebarCollapsedControl"] button svg {
+        color: var(--green) !important;
+    }
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #1f6b48 0%, #123c2b 100%);
         border-right: 1px solid #1d5c42;
         min-width: 260px !important;
         width: 260px !important;
         padding: 1.2rem 0.9rem 0.8rem 0.9rem;
+        color: white !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] {
+        color: white !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] svg {
         color: white !important;
     }
     [data-testid="stSidebar"] h1,
