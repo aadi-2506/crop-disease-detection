@@ -171,6 +171,9 @@ st.markdown(
     }
     .panel h3 { color: #174832; }
     .soft-note { color: #536961; font-size: 1.05rem; line-height: 1.7; }
+    .st-key-about_sections [data-testid="stExpander"] summary [data-testid="stMarkdownContainer"] p {
+        color: var(--green) !important;
+    }
     [data-testid="stAppViewContainer"] .stRadio label,
     [data-testid="stAppViewContainer"] .stRadio label p,
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] label,
@@ -554,9 +557,10 @@ def render_about() -> None:
         ("Technologies", "Python, TensorFlow/Keras, MobileNetV2, NumPy, Pandas, Pillow, scikit-learn, Matplotlib and Streamlit."),
         ("Future scope", "Collect field images, validate predictions with agricultural experts, support regional languages, and deploy with ongoing monitoring and model updates."),
     ]
-    for heading, description in sections:
-        with st.expander(heading, expanded=heading == "Problem statement"):
-            st.write(description)
+    with st.container(key="about_sections"):
+        for heading, description in sections:
+            with st.expander(heading, expanded=heading == "Problem statement"):
+                st.write(description)
 
 
 with st.sidebar:
