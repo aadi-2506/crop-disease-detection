@@ -115,6 +115,40 @@ st.markdown(
     [data-testid="stSidebar"] .stRadio label:hover {
         background: rgba(255,255,255,0.09);
     }
+    [data-testid="stSidebar"] .st-key-navigation {
+        width: 100%;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stWidgetLabel"] {
+        display: none;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioGroup"] {
+        align-items: stretch;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] {
+        width: 100%;
+        align-self: stretch;
+        min-height: 2.7rem;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        transition: background-color 150ms ease, border-color 150ms ease;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] > div {
+        width: 100%;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"] > div > div:first-child {
+        display: none;
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"][data-selected="true"] {
+        background: rgba(223, 242, 206, 0.16);
+        border-color: rgba(223, 242, 206, 0.38);
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"]:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+    [data-testid="stSidebar"] .st-key-navigation [data-testid="stRadioOption"]:focus-visible {
+        outline: 2px solid #dff2ce;
+        outline-offset: 2px;
+    }
     [data-testid="stSidebar"] .stRadio input[type="radio"] {
         accent-color: #ffffff;
         width: 0.9rem;
@@ -180,6 +214,44 @@ st.markdown(
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] label p,
     [data-testid="stAppViewContainer"] [data-testid="stFileUploader"] small {
         color: #183326 !important;
+    }
+    .st-key-image_source {
+        width: 100%;
+    }
+    .st-key-image_source [data-testid="stRadioGroup"] {
+        width: 100%;
+        gap: 0.75rem;
+    }
+    .st-key-image_source [data-testid="stRadioOption"] {
+        flex: 1;
+        justify-content: center;
+        min-height: 2.8rem;
+        padding: 0.45rem 0.8rem;
+        border: 1px solid #b9d2c1;
+        border-radius: 12px;
+        background: #ffffff;
+        transition: background-color 150ms ease, border-color 150ms ease;
+    }
+    .st-key-image_source [data-testid="stRadioOption"] > div > div:first-child {
+        display: none;
+    }
+    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"] {
+        background: var(--green);
+        border-color: var(--green);
+    }
+    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"] p {
+        color: #ffffff !important;
+    }
+    .st-key-image_source [data-testid="stRadioOption"]:hover {
+        border-color: var(--green);
+        background: #f0f7f1;
+    }
+    .st-key-image_source [data-testid="stRadioOption"][data-selected="true"]:hover {
+        background: #164e34;
+    }
+    .st-key-image_source [data-testid="stRadioOption"]:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 2px;
     }
     [data-testid="stSidebar"] .stRadio label,
     [data-testid="stSidebar"] .stRadio label p,
@@ -355,6 +427,7 @@ def render_detection() -> None:
     image_source = st.radio(
         "Choose image source",
         ["Upload image", "Use camera"],
+        key="image_source",
         horizontal=True,
         label_visibility="collapsed",
     )
