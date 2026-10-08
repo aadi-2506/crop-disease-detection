@@ -400,7 +400,8 @@ def render_detection() -> None:
             if not MODEL_PATH.is_file():
                 st.error(
                     f"Trained model not found at {MODEL_PATH}. "
-                    "Set up the dataset and run `python train.py` before detection."
+                    "Train locally with `python train.py`, then include the generated "
+                    "model file in the deployment."
                 )
                 return
             try:
@@ -473,7 +474,11 @@ def render_detection() -> None:
 def render_performance() -> None:
     st.title("Model performance")
     if not MODEL_PATH.is_file():
-        st.warning("The trained model is not available yet. Train it with `python train.py`.")
+        st.warning(
+            "The trained model is not available in this deployment. Train it locally "
+            "with `python train.py`, then include `models/crop_disease_model.keras` "
+            "when deploying."
+        )
     has_dataset_images = DATASET_PATH.is_dir() and any(
         path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png"}
         for path in DATASET_PATH.rglob("*")

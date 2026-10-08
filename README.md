@@ -144,12 +144,14 @@ python predict.py "path\to\leaf.jpg"
 
 ## Deploying the Streamlit application
 
-1. Train the model and include both `models/crop_disease_model.keras` and
-   `models/evaluation_results.json` with the deployment. These generated model
-   artifacts are not included in source control by default in most workflows.
-2. Push the project and trained model artifacts to a private GitHub repository
-   or another deployment source. Check the dataset's license/terms before
-   distributing any dataset images.
+1. Train the model locally with `python train.py`. This creates
+   `models/crop_disease_model.keras` and `models/evaluation_results.json`. Both
+   files must be included with the deployed app; the dataset does not need to
+   be deployed for inference.
+2. Add and push those two generated files with the app code. The `.gitignore`
+   allows these model artifacts to be tracked, while keeping the larger test
+   manifest ignored. Check the dataset's license/terms before distributing any
+   dataset images.
 3. Create an app on [Streamlit Community Cloud](https://share.streamlit.io/)
    (or use another service that supports Streamlit), select the repository,
    branch and `app.py`, and set Python to 3.10 if the service permits.

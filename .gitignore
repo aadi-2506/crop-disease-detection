@@ -8,6 +8,4 @@ dataset/**/*.png
 dataset/**/*.JPG
 dataset/**/*.JPEG
 dataset/**/*.PNG
-models/crop_disease_model.keras
-models/evaluation_results.json
 models/test_manifest.json
